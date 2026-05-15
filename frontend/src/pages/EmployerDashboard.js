@@ -476,11 +476,10 @@ const filteredJobs = jobs.filter((job) =>
                               }
                             </p>
 
-                            {item.candidate
-                              ?.resume && (
+                           {item.resume && (
 
                               <a
-                               href={`http://localhost:5000/uploads/${item.candidate.resume}`}
+                               href={item.resume}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="text-decoration-none"
