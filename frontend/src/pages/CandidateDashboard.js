@@ -12,7 +12,7 @@ import {
 
 const CandidateDashboard = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const location = useLocation();
 
