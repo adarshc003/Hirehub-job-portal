@@ -19,9 +19,13 @@ exports.applyJob = async (req, res) => {
       });
     }
 
+const user = await User.findById(
+  req.user.id
+);
+
 const resumePath = req.file
   ? `https://hirehub-job-portal-cwz8.onrender.com/uploads/${req.file.filename}`
-  : null;
+  : user.resume;
 
 const application = await Application.create({
   candidate: req.user.id,
