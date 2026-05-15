@@ -19,7 +19,7 @@ const Jobs = () => {
 
   const [jobs, setJobs] = useState([]);
 
-  const [filters, setFilters] = useState({
+  const [filters] = useState({
     role: queryParams.get("role") || "",
     location:
       queryParams.get("location") || "",
