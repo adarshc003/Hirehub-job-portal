@@ -19,10 +19,15 @@ exports.applyJob = async (req, res) => {
       });
     }
 
-    const application = await Application.create({
-      candidate: req.user.id,
-      job: req.params.jobId,
-    });
+const resumePath = req.file
+  ? `https://hirehub-job-portal-cwz8.onrender.com/uploads/${req.file.filename}`
+  : null;
+
+const application = await Application.create({
+  candidate: req.user.id,
+  job: req.params.jobId,
+  resume: resumePath,
+});
 
     res.status(201).json({
       message: "Job applied successfully",

@@ -4,6 +4,7 @@ const router = express.Router();
 
 const authMiddleware = require("../middleware/authMiddleware");
 
+const upload = require("../middleware/uploadMiddleware");
 const {
   applyJob,
   getMyApplications,
@@ -14,6 +15,7 @@ const {
 router.post(
   "/apply/:jobId",
   authMiddleware,
+  upload.single("resume"),
   applyJob
 );
 
