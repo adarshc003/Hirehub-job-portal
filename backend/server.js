@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const fs = require("fs");
 const authRoutes = require("./routes/authRoutes");
 const testRoutes = require("./routes/testRoutes");
 const jobRoutes = require("./routes/jobRoutes");
@@ -13,6 +14,10 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+if (!fs.existsSync("uploads")) {
+  fs.mkdirSync("uploads");
+}
 
 app.use("/uploads", express.static("uploads"));
 
