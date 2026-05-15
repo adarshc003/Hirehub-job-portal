@@ -15,6 +15,7 @@ const JobApplicants = () => {
 
   useEffect(() => {
     fetchApplicants();
+    // eslint-disable-next-line
   }, []);
 
   const fetchApplicants = async () => {

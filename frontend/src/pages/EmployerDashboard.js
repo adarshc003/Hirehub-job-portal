@@ -36,6 +36,7 @@ const EmployerDashboard = () => {
 
   useEffect(() => {
     fetchJobs();
+    // eslint-disable-next-line
   }, []);
 
   const fetchJobs = async () => {

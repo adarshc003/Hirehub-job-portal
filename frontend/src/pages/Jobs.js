@@ -29,6 +29,7 @@ const Jobs = () => {
 
   useEffect(() => {
     fetchJobs();
+    // eslint-disable-next-line
   }, [locationHook.search]);
 
   const fetchJobs = async () => {

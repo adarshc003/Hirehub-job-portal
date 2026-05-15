@@ -6,13 +6,12 @@ import React, {
 import API from "../services/api";
 
 import {
-  useNavigate,
   useLocation,
 } from "react-router-dom";
 
 const CandidateDashboard = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const location = useLocation();
 
@@ -33,6 +32,7 @@ const CandidateDashboard = () => {
 
   useEffect(() => {
     fetchJobs();
+    // eslint-disable-next-line
   }, []);
 
   const fetchJobs = async () => {
